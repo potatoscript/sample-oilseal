@@ -1,0 +1,22 @@
+{
+  "user": [
+    {
+      "email": "lim@yahoo.co.jp",
+      "name": "lim",
+      "password": "lim@888",
+      "id": 1
+    },
+    {
+      "email": "abc@hotmail.com",
+      "name": "abc",
+      "password": "abc@888",
+      "id": 2
+    },
+    {
+      "email": "bruce@google.com",
+      "name": "bruce",
+      "password": "brucew@888",
+      "id": 3
+    }
+  ]
+}
