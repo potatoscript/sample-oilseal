@@ -1,4 +1,4 @@
-# 業務管理システム
+# 製品管理システム
 
 - Vue.js【フロントエンド】と ASP.NET CORE API【バックエンド】で作成するシンプルなシステムです。<br>
 - 企業の従業員のワークロードを監視するためのソリューションです-
@@ -6,7 +6,7 @@
 ## 目次
 
 - [概要](#概要)
-  - [ワークフロー](#ワークフロー)
+  - [開発環境設置](#開発環境設置)
   - [スクリーンショット](#スクリーンショット)
   - [リンク](#リンク)
 - [構造](#構造)
@@ -19,7 +19,20 @@
 
 [目次](#目次)
 
-### ワークフロー
+### 開発環境設置
+
+- Json サーバーをインストール（）
+
+  - `npm install -g json-server`
+  - データベース json ファイル (例、dummy.json) を作成し、コマンド プロンプトで次のコマンドを実行します。
+    - `json-server --watch dummy.json`
+  - JSON の一般的な用途は、Web サーバーとの間でデータを交換することです。
+
+    Web サーバーからデータを受信する場合、データは常に文字列です。
+
+    JSON.parse() でデータを解析すると、データは JavaScript オブジェクトになります。
+
+- `JSON.stringify(myObj)`を使用して、オブジェクトに格納された JavaScript データを JSON に変換し、サーバーに送信します。
 
 <image style="width:300px;height:150px" src="./document/workflow.png" />
 
@@ -43,7 +56,7 @@
 ### リンク
 
 以下のリンクは、デモンストレーションのために github にアップロードされた [Front End] システムのみです。<br>
-URL: [Frontend ライブサイト](https://potatoscript.github.io/arentinc-production/)
+URL: [Frontend ライブサイト](https://potatoscript.github.io/system-oilseal/)
 
 ## 構造
 
