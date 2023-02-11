@@ -1,11 +1,12 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import JobView from '../views/JobView.vue'
 import SignUp from '../components/SignUp.vue'
+import Login from '../components/Login.vue'
 const routes = [
   {
     path: '/',
     name: 'job',
-    component: JobView, SignUp
+    component: JobView, SignUp, Login
   },
   {
     path: '/employee',
@@ -16,6 +17,11 @@ const routes = [
     path: '/signup',
     name: 'signup',
     component: () => import('../components/SignUp.vue')
+  },
+  {
+    path: '/login',
+    name: 'login',
+    component: () => import('../components/Login.vue')
   }
 ]
 

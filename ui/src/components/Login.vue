@@ -1,20 +1,19 @@
 <template>
   <img class="logo" src="../assets/signup.png" />
-  <h1>サインアップ</h1>
+  <h1>Login</h1>
   <div class="register">
     <input type="text" v-model="name" placeholder="名称" />
-    <input type="text" v-model="email" placeholder="メール" />
     <input type="password" v-model="password" placeholder="パスワード" />
-    <button v-on:click="SignUp">Sign Up</button>
+    <button v-on:click="Login">Login</button>
     <p>
-      <router-link to="/login">Login</router-link>
+      <router-link to="/signup">Sign Up</router-link>
     </p>
   </div>
 </template>
 <script>
 import axios from "axios";
 export default {
-  name: "SignUp",
+  name: "Log-in",
   data() {
     return {
       name: "",
@@ -23,15 +22,12 @@ export default {
     };
   },
   methods: {
-    async SignUp() {
-      let result = await axios.post(
-        "https://my-json-server.typicode.com/potatoscript/json-server/user",
-        {
-          email: this.email,
-          name: this.name,
-          password: this.password,
-        }
-      );
+    async Login() {
+      let result = await axios.post("http://localhost:3000/user", {
+        email: this.email,
+        name: this.name,
+        password: this.password,
+      });
       console.warn(result);
       if (result.status == 201) {
         localStorage.setItem("user-info", JSON.stringify(result.data));
@@ -40,10 +36,7 @@ export default {
     },
   },
   mounted() {
-    let user = localStorage.getItem("user-info");
-    if (user) {
-      this.$router.push({ name: "job" });
-    }
+    //let user = localStorage.getItem("user-info");
   },
 };
 </script>
