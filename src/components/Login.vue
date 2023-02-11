@@ -23,14 +23,11 @@ export default {
   },
   methods: {
     async Login() {
-      let result = await axios.post(
-        "https://my-json-server.typicode.com/potatoscript/json-server/user",
-        {
-          email: this.email,
-          name: this.name,
-          password: this.password,
-        }
-      );
+      let result = await axios.post("http://localhost:3000/user", {
+        email: this.email,
+        name: this.name,
+        password: this.password,
+      });
       console.warn(result);
       if (result.status == 201) {
         localStorage.setItem("user-info", JSON.stringify(result.data));
