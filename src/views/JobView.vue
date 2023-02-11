@@ -465,9 +465,10 @@ export default {
     },
   },
   mounted: function () {
-    this.getEmployeeList();
-    this.refreshData();
+    //this.getEmployeeList();
+    //this.refreshData();
     let user = localStorage.getItem("user-info");
+
     if (!user) {
       this.$router.push({ name: "signup" });
     }
