@@ -44,8 +44,8 @@ import "bootstrap/dist/css/bootstrap.min.css"
 
 ### メニュー
 
-<image style="width:300px;height:150px" src="./document/menu.png" />
-```vue.js
+<image style="width:700px;height:100px" src="./document/menu.png" />
+```vue
 <div class="p-3">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
