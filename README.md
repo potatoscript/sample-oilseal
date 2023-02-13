@@ -45,20 +45,20 @@ import "bootstrap/dist/css/bootstrap.min.css"
 ### メニュー
 
 <image style="width:700px;height:100px" src="./document/menu.png" />
-```vue
+```
 <div class="p-3">
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
       <div class="container-fluid">
         <ul class="nav">
           <li class="nav-item">
             <h3 class="d-flex justify-content-center m-1 mr-5">
-              {{ ja_Title }}
+              { ja_Title }
             </h3>
           </li>
           <li class="nav-item m-1">
-            <router-link class="btn btn-light btn-outline-primary" to="/">{{
+            <router-link class="btn btn-light btn-outline-primary" to="/">{
               ja_Job
-            }}</router-link>
+            }</router-link>
           </li>
         </ul>
         <div>
@@ -84,7 +84,7 @@ import "bootstrap/dist/css/bootstrap.min.css"
                 <router-link
                   class="btn btn-light m-1 btn-outline-primary"
                   :to="{ name: 'signup' }"
-                  >{{ ja_Signup }}</router-link
+                  > ja_Signup </router-link
                 >
               </li>
             </ul>
