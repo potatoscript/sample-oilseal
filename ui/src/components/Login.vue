@@ -1,65 +1,49 @@
 <template>
   <img class="logo" src="../assets/signup.png" />
-  <h1>Login</h1>
-  <div class="register">
-    <input type="text" v-model="name" placeholder="名称" />
-    <input type="password" v-model="password" placeholder="パスワード" />
-    <button v-on:click="Login">Login</button>
+  <h1>{{ ja_Login }}</h1>
+  <div class="login">
+    <input type="text" v-model="email" :placeholder="ja_Email" />
+    <input type="password" v-model="password" :placeholder="ja_Password" />
+    <button v-on:click="Login">{{ ja_Login }}</button>
     <p>
-      <router-link to="/signup">Sign Up</router-link>
+      <router-link to="/signup">{{ ja_Signup }}</router-link>
     </p>
   </div>
 </template>
 <script>
 import axios from "axios";
+import ja from "../locales/ja.json";
 export default {
   name: "Log-in",
   data() {
     return {
-      name: "",
       email: "",
       password: "",
+      ja_Email: ja.Email,
+      ja_Password: ja.Password,
+      ja_Name: ja.Name,
+      ja_Login: ja.Login,
+      ja_Signup: ja.Signup,
     };
   },
   methods: {
     async Login() {
-      let result = await axios.post("http://localhost:3000/user", {
-        email: this.email,
-        name: this.name,
-        password: this.password,
-      });
+      let result = await axios.get(
+        `http://localhost:3000/user?email=${this.email}&password=${this.password}`
+      );
       console.warn(result);
-      if (result.status == 201) {
+      if (result.status == 200 && result.data.length > 0) {
         localStorage.setItem("user-info", JSON.stringify(result.data));
         this.$router.push({ name: "job" });
       }
     },
   },
   mounted() {
-    //let user = localStorage.getItem("user-info");
+    let user = localStorage.getItem("user-info");
+    if (user) {
+      this.$router.push({ name: "job" });
+    }
   },
 };
 </script>
-<style scoped>
-.logo {
-  width: 100px;
-}
-.register input {
-  width: 300px;
-  height: 40px;
-  padding-left: 20px;
-  display: block;
-  margin-bottom: 30px;
-  margin-right: auto;
-  margin-left: auto;
-  border: 1px solid skyblue;
-}
-.register button {
-  width: 320px;
-  height: 40px;
-  border: 1px solid skyblue;
-  background-color: skyblue;
-  color: #ffffff;
-  cursor: pointer;
-}
-</style>
+<style scoped></style>

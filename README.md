@@ -21,7 +21,17 @@
 
 ### 開発環境設置
 
+- Bootstrap をインストール
+- `npm install bootstrap`
+- import bootstrap in `main.js`
+
+```
+import "bootstrap";
+import "bootstrap/dist/css/bootstrap.min.css"
+```
+
 - Json サーバーをインストール（）
+
   - `npm install -g json-server`
   - データベース json ファイル (例、dummy.json) を作成し、コマンド プロンプトで次のコマンドを実行します。
     - `json-server --watch dummy.json`
@@ -30,24 +40,61 @@
     JSON.parse() でデータを解析すると、データは JavaScript オブジェクトになります。
   - `JSON.stringify(myObj)`を使用して、オブジェクトに格納された JavaScript データを JSON に変換し、サーバーに送信します。
 
-<image style="width:300px;height:150px" src="./document/workflow.png" />
+- axios をインストール
 
-### スクリーンショット
+### メニュー
 
-<table>
-<tr>
-<td>DEMO</td>
-<td><image style="width:300px;height:150px" src="./document/demo.gif" /></td>
-</tr>
-<tr>
-<td>PC表示</td>
-<td><image style="width:300px;height:150px" src="./document/screenshot.png" /></td>
-</tr>
-<tr>
-<td>スマートフォン表示</td>
-<td><image style="width:200px;height:250px" src="./document/screenshot3.png" /></td>
-</tr>
-</table>
+<image style="width:300px;height:150px" src="./document/menu.png" />
+```vue.js
+<div class="p-3">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+        <ul class="nav">
+          <li class="nav-item">
+            <h3 class="d-flex justify-content-center m-1 mr-5">
+              {{ ja_Title }}
+            </h3>
+          </li>
+          <li class="nav-item m-1">
+            <router-link class="btn btn-light btn-outline-primary" to="/">{{
+              ja_Job
+            }}</router-link>
+          </li>
+        </ul>
+        <div>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarTogglerDemo02"
+            aria-controls="navbarTogglerDemo02"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div
+            style="position: absolute; top: 60px; right: 10px"
+            class="collapse"
+            id="navbarTogglerDemo02"
+          >
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+              <li class="nav-item"></li>
+              <li class="nav-item">
+                <router-link
+                  class="btn btn-light m-1 btn-outline-primary"
+                  :to="{ name: 'signup' }"
+                  >{{ ja_Signup }}</router-link
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+    <router-view />
+  </div>
+```
 
 ### リンク
 
