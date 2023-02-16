@@ -22,13 +22,14 @@
 ### 開発環境設置
 
 - Bootstrap をインストール
-- `npm install bootstrap`
-- import bootstrap in `main.js`
 
-```
-import "bootstrap";
-import "bootstrap/dist/css/bootstrap.min.css"
-```
+  - `npm install bootstrap`
+  - import bootstrap in `main.js`
+
+    ```
+    import "bootstrap";
+    import "bootstrap/dist/css/bootstrap.min.css"
+    ```
 
 - Json サーバーをインストール（）
 

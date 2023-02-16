@@ -9,6 +9,6 @@ cd dist
 git init
 git add -A
 git commit -m "New Deplyment"
-git push -f git@github.com:potatoscript/system-oilseal.git master:gh-pages
+git push -f git@github.com:potatoscript/system-vuejs.git master:gh-pages
 
 cd -
