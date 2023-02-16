@@ -359,8 +359,8 @@ export default {
         .catch((error) => {
           console.log(error);
           // 接続がない場合、ダミーデータが使用されます DEMO deploy ONLY
-          //self.jobs = dummy[0].jobscount;
-          //self.createPieChart();
+          self.jobs = dummy[0].jobscount;
+          self.createPieChart();
         });
     },
     createPieChart() {
@@ -466,10 +466,10 @@ export default {
   },
   mounted: function () {
     //this.getEmployeeList();
-    //this.refreshData();
+    this.refreshData();
     let user = localStorage.getItem("user-info");
     if (!user) {
-      this.$router.push({ name: "signup" });
+      this.$router.push({ name: "login" });
     }
   },
 };
