@@ -109,7 +109,7 @@ URL: [Frontend ライブサイト](https://potatoscript.github.io/system-vuejs/)
 
 ### a 開発環境ツール
 
-<image style="width:700px;height:800px" src="./document/home.png" />
+<image style="width:700px;height:700px" src="./document/home.png" />
 
 - [PostgreSQL](https://www.postgresql.org/) - Database
 - [ASP.NET CORE API](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-6.0) - Back End development framework in c#
