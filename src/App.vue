@@ -1,6 +1,6 @@
 <template>
   <div class="p-3">
-    <Header v-if="showHeader" />
+    <Header v-if="showHeader" :name="name" />
     <router-view />
   </div>
 </template>
@@ -19,6 +19,7 @@ export default {
       ja_Job: ja.Job,
       ja_Signup: ja.Signup,
       ja_Login: ja.Login,
+      name: "",
     };
   },
   watch: {
@@ -26,6 +27,7 @@ export default {
       let user = localStorage.getItem("user-info");
       this.showHeader = false;
       if (user) {
+        this.name = JSON.parse(user)[0].name;
         this.showHeader = true;
       }
     },

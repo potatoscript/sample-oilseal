@@ -13,6 +13,7 @@
 <script>
 import axios from "axios";
 import ja from "../locales/ja.json";
+import dummy from "../assets/dummy.json";
 export default {
   name: "Log-in",
   data() {
@@ -28,14 +29,27 @@ export default {
   },
   methods: {
     async Login() {
-      let result = await axios.get(
-        `http://localhost:3000/user?email=${this.email}&password=${this.password}`
-      );
-      console.warn(result);
-      if (result.status == 200 && result.data.length > 0) {
-        localStorage.setItem("user-info", JSON.stringify(result.data));
-        this.$router.push({ name: "job" });
-      }
+      await axios
+        .get(
+          `http://localhost:3000/user?email=${this.email}&password=${this.password}`
+        )
+        .then((response) => {
+          console.warn(response);
+          if (response.status == 200 && response.data.length > 0) {
+            localStorage.setItem("user-info", JSON.stringify(response.data));
+            this.$router.push({ name: "job" });
+          }
+        })
+        .catch((error) => {
+          console.log(error);
+          // 接続がない場合、ダミーデータが使用されます
+          dummy[0].user.forEach((e) => {
+            if (e.email == this.email && e.password == this.password) {
+              localStorage.setItem("user-info", JSON.stringify(dummy[0].user));
+              this.$router.push({ name: "job" });
+            }
+          });
+        });
     },
   },
   mounted() {

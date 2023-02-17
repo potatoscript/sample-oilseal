@@ -22,8 +22,8 @@
       </ul>
       <div>
         <ul class="nav">
-          <li class="nav-item m-1">
-            <a v-on:click="Logout" href="#">{{ ja_Logout }}</a>
+          <li class="nav-item m-1 mt-2">
+            <a href="#">ようこそ{{ name }}</a>
           </li>
           <li class="nav-item m-1">
             <button
@@ -40,17 +40,18 @@
           </li>
         </ul>
         <div
-          style="position: absolute; top: 60px; right: 10px"
+          style="z-index: 100; position: absolute; top: 60px; right: 10px"
           class="collapse"
           id="navbarTogglerDemo02"
         >
           <ul class="navbar-nav me-auto mb-2 mb-lg-0">
             <li class="nav-item"></li>
             <li class="nav-item">
-              <router-link
+              <a
                 class="btn btn-light m-1 btn-outline-primary"
-                :to="{ name: 'signup' }"
-                >{{ ja_Signup }}</router-link
+                v-on:click="Logout"
+                href="#"
+                >{{ ja_Logout }}</a
               >
             </li>
           </ul>
@@ -62,6 +63,7 @@
 <script>
 import ja from "../locales/ja.json";
 export default {
+  props: ["name"],
   data() {
     return {
       ja_Title: ja.Title,
