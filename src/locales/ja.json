@@ -1,4 +1,9 @@
 {
+    "Logout":"ロックアウト",
+    "Login":"ロックイン",
+    "Signup":"サインアップ",
+    "Email": "メール",
+    "Password": "パスワード",
     "Case": "業務件数",
     "Content": "業務内容",
     "ConfirmDelete":"データを削除するか？",
@@ -14,7 +19,7 @@
     "New":"新規",
     "Position": "役職",
     "Status": "状況",
-    "Title": "社員業務時間管理",
+    "Title": "PIMS",
     "TotalJobs":"総合案件",
     "Update":"更新"
 }

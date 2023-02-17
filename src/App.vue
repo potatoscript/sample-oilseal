@@ -1,43 +1,42 @@
 <template>
   <div class="p-3">
-    <nav class="navbar navbar-expand-sm bg-light navbar-dark">
-      <ul class="navbar-nav">
-        <li>
-          <h3 class="d-flex justify-content-center">{{ ja_Title }}</h3>
-        </li>
-        <li class="nav-item">
-          <router-link
-            class="btn btn-light btn-outline-primary m-1 mx-3"
-            to="/"
-            >{{ ja_Job }}</router-link
-          >
-        </li>
-        <li class="nav-item m-1">
-          <router-link
-            class="btn btn-light btn-outline-primary"
-            :to="{ name: 'employee' }"
-            >{{ ja_Master }}</router-link
-          >
-        </li>
-      </ul>
-    </nav>
+    <Header v-if="showHeader" />
     <router-view />
   </div>
 </template>
 <script>
 import ja from "./locales/ja.json";
+import Header from "./components/Header.vue";
 export default {
+  components: {
+    Header,
+  },
   data() {
     return {
+      showHeader: false,
       ja_Title: ja.Title,
       ja_Master: ja.Master,
       ja_Job: ja.Job,
+      ja_Signup: ja.Signup,
+      ja_Login: ja.Login,
     };
+  },
+  watch: {
+    $route() {
+      let user = localStorage.getItem("user-info");
+      this.showHeader = false;
+      if (user) {
+        this.showHeader = true;
+      }
+    },
   },
 };
 </script>
 
 <style>
+.collapeMenu {
+  position: relative;
+}
 #app {
   text-align: center;
 }
@@ -54,5 +53,28 @@ export default {
 #nav a.router-link-exact-active {
   color: white;
   background: crimson;
+}
+.logo {
+  width: 100px;
+}
+.register input,
+.login input {
+  width: 300px;
+  height: 40px;
+  padding-left: 20px;
+  display: block;
+  margin-bottom: 30px;
+  margin-right: auto;
+  margin-left: auto;
+  border: 1px solid skyblue;
+}
+.register button,
+.login button {
+  width: 320px;
+  height: 40px;
+  border: 1px solid skyblue;
+  background-color: skyblue;
+  color: #ffffff;
+  cursor: pointer;
 }
 </style>
