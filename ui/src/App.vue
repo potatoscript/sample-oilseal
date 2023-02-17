@@ -27,7 +27,7 @@ export default {
       let user = localStorage.getItem("user-info");
       this.showHeader = false;
       if (user) {
-        this.name = JSON.parse(user).name;
+        this.name = JSON.parse(user)[0].name;
         this.showHeader = true;
       }
     },
