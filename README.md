@@ -101,13 +101,15 @@
 ### リンク
 
 以下のリンクは、デモンストレーションのために github にアップロードされた [Front End] システムのみです。<br>
-URL: [Frontend ライブサイト](https://potatoscript.github.io/system-oilseal/)
+URL: [Frontend ライブサイト](https://potatoscript.github.io/system-vuejs/)
 
 ## 構造
 
 [目次](#目次)
 
 ### a 開発環境ツール
+
+<image style="width:700px;height:100px" src="./document/home.png" />
 
 - [PostgreSQL](https://www.postgresql.org/) - Database
 - [ASP.NET CORE API](https://docs.microsoft.com/en-us/aspnet/core/?view=aspnetcore-6.0) - Back End development framework in c#
