@@ -1,4 +1,12 @@
 [{
+    "user":[
+        {
+            "email": "test",
+            "name": "lim",
+            "password": "test",
+            "id": 1
+          }
+    ],
     "jobs": [
         {
             "jobId":1,
