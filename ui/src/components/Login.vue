@@ -34,7 +34,9 @@
         "を使用してください
       </h2>
       <br />
-      <a href="https://github.com/potatoscript/system-vuejs">ソフトコード</a>
+      <a target="_blank" href="https://github.com/potatoscript/system-vuejs"
+        >source code</a
+      >
     </div>
   </div>
 </template>
